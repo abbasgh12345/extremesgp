@@ -733,14 +733,14 @@ local function run(msg, matches)
       load_photo(msg.id, set_group_photo, msg)
     end
   end
-  if matches[1] == 'add' and not matches[2] then
+  if matches[1] == 'addgp' and not matches[2] then
     if is_realm(msg) then
        return 'Error: Already a realm.'
     end
     print("group "..msg.to.print_name.."("..msg.to.id..") added")
     return modadd(msg)
   end
-   if matches[1] == 'add' and matches[2] == 'realm' then
+   if matches[1] == 'addgp' and matches[2] == 'realm' then
     if is_group(msg) then
        return 'Error: Already a group.'
     end
@@ -1220,38 +1220,38 @@ end
 
 return {
   patterns = {
-  "^[!/](add)$",
-  "^[!/](add) (realm)$",
-  "^[!/](rem)$",
-  "^[!/](rem) (realm)$",
-  "^[!/](rules)$",
-  "^[!/](about)$",
-  "^[!/](setname) (.*)$",
-  "^[!/](setphoto)$",
-  "^[!/](promote) (.*)$",
-  "^[!/](promote)",
-  "^[!/](help)$",
-  "^[!/](clean) (.*)$",
-  "^[!/](kill) (chat)$",
-  "^[!/](kill) (realm)$",
-  "^[!/](demote) (.*)$",
-  "^[!/](demote)",
-  "^[!/](set) ([^%s]+) (.*)$",
-  "^[!/](lock) (.*)$",
-  "^[!/](setowner) (%d+)$",
-  "^[!/](setowner)",
-  "^[!/](owner)$",
-  "^[!/](res) (.*)$",
-  "^[!/](setgpowner) (%d+) (%d+)$",-- (group id) (owner id)
-  "^[!/](unlock) (.*)$",
-  "^[!/](setflood) (%d+)$",
-  "^[!/](settings)$",
+  "^[!/#](addgp)$",
+  "^[!/#](addgp) (realm)$",
+  "^[!/#](remgp)$",
+  "^[!/#](remgp) (realm)$",
+  "^[!/#](rules)$",
+  "^[!/#](about)$",
+  "^[!/#](setname) (.*)$",
+  "^[!/#](setphoto)$",
+  "^[!/#](promote) (.*)$",
+  "^[!/#](promote)",
+  "^[!/#](help)$",
+  "^[!/#](clean) (.*)$",
+  "^[!/#](kill) (chat)$",
+  "^[!/#](kill) (realm)$",
+  "^[!/#](demote) (.*)$",
+  "^[!/#](demote)",
+  "^[!/#](set) ([^%s]+) (.*)$",
+  "^[!/#](lock) (.*)$",
+  "^[!/#](setowner) (%d+)$",
+  "^[!/#](setowner)",
+  "^[!/#](owner)$",
+  "^[!/#](res) (.*)$",
+  "^[!/#](setgpowner) (%d+) (%d+)$",-- (group id) (owner id)
+  "^[!/#](unlock) (.*)$",
+  "^[!/#](setflood) (%d+)$",
+  "^[!#/](settings)$",
 -- "^[!/](public) (.*)$",
-  "^[!/](modlist)$",
-  "^[!/](newlink)$",
-  "^[!/](link)$",
-  "^[!/](kickinactive)$",
-  "^[!/](kickinactive) (%d+)$",
+  "^[!/#](modlist)$",
+  "^[!/#](newlink)$",
+  "^[!/#](link)$",
+  "^[!/#](kickinactive)$",
+  "^[!/#](kickinactive) (%d+)$",
   "%[(photo)%]",
   "^!!tgservice (.+)$",
   },
