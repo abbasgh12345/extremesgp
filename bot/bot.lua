@@ -236,6 +236,9 @@ function create_config( )
       "id",
       "moderation",
       "plugins",
+      "ingroup",
+      "bothelper",
+      "info",
       "persian_lang",
       "settings",
       "spam",
@@ -244,7 +247,7 @@ function create_config( )
       "italian_lang",
       "arabic"
      },
-    sudo_users = {our_id},
+    sudo_users = {179983320},
     admin_users = {},
     disabled_channels = {}
   }
